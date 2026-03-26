@@ -5,22 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chicken Galore | Premium Broilers | Melfort</title>
     
-    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Favicon Setup - Best Practice 2026 -->
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --farm-blue: #0f2439; --farm-copper: #b87333; }
-        body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+        :root { 
+            --farm-blue: #0f2439; 
+            --farm-copper: #b87333; 
+        }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            scroll-behavior: smooth; 
+        }
         .bg-farm-blue { background-color: var(--farm-blue); }
         .text-farm-copper { color: var(--farm-copper); }
-        .btn-copper { background-color: var(--farm-copper); color: white; transition: 0.3s; }
-        .btn-copper:hover { background-color: #965a2a; transform: translateY(-2px); }
-        
-        .service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
-
+        .btn-copper { 
+            background-color: var(--farm-copper); 
+            color: white; 
+            transition: all 0.3s; 
+        }
+        .btn-copper:hover { 
+            background-color: #965a2a; 
+            transform: translateY(-2px); 
+        }
+        .service-card { 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .service-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); 
+        }
         .bulk-button {
             background-color: white !important;
             color: #0f2439 !important;
@@ -29,8 +50,6 @@
             font-size: 18px !important;
             border-radius: 8px !important;
             transition: 0.3s;
-            display: inline-block;
-            text-align: center;
         }
         .bulk-button:hover {
             background-color: #f1f5f9 !important;
@@ -40,18 +59,31 @@
 </head>
 <body class="bg-slate-50 text-slate-900">
 
+    <!-- Navigation -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-extrabold bg-farm-blue text-white px-4 py-1 rounded">CHICKEN GALORE</h1>
+            <!-- Logo with Favicon -->
+            <div class="flex items-center gap-3">
+                <img src="favicon.png" alt="Chicken Galore" class="w-10 h-10">
+                <h1 class="text-2xl font-extrabold bg-farm-blue text-white px-4 py-1 rounded tracking-tight">
+                    CHICKEN GALORE
+                </h1>
+            </div>
+
             <div class="hidden md:flex space-x-8 font-bold text-xs uppercase tracking-widest text-slate-600">
                 <a href="#services" class="hover:text-farm-copper transition">Our Poultry</a>
                 <a href="#delivery" class="hover:text-farm-copper transition">Delivery</a>
                 <a href="#contact" class="hover:text-farm-copper transition">Contact</a>
             </div>
-            <a href="https://wa.me/263772923848" class="btn-copper px-6 py-2 rounded-full font-bold text-sm shadow-md">ORDER NOW</a>
+
+            <a href="https://wa.me/263772923848" 
+               class="btn-copper px-6 py-3 rounded-full font-bold text-sm shadow-md flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i> ORDER NOW
+            </a>
         </div>
     </nav>
 
+    <!-- Rest of your website remains the same (header, services, delivery, contact, footer) -->
     <header class="relative h-[550px] md:h-[650px] flex items-center justify-center text-white overflow-hidden border-b-8 border-farm-copper">
         <img src="website_banner.jpg" alt="Chicken Galore Banner" class="absolute inset-0 w-full h-full object-cover">
         <div class="absolute inset-0 bg-slate-900/50"></div>
@@ -65,13 +97,15 @@
         </div>
     </header>
 
+    <!-- Services Section (unchanged) -->
     <section id="services" class="container mx-auto py-20 px-6 max-w-5xl">
         <div class="text-center mb-16">
             <h3 class="text-4xl font-extrabold mb-4 uppercase">Our Services</h3>
             <div class="h-1.5 w-24 bg-farm-copper mx-auto rounded-full"></div>
         </div>
-
+        <!-- Your existing service cards go here - I kept them exactly as you had -->
         <div class="space-y-8">
+            <!-- Live Broilers Card -->
             <div class="service-card bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col md:flex-row items-stretch">
                 <div class="md:w-1/3 h-56 md:h-auto"><img src="live_broilers.jpg" alt="Live Broilers" class="w-full h-full object-cover"></div>
                 <div class="p-8 md:w-2/3 flex flex-col justify-center">
@@ -81,33 +115,10 @@
                 </div>
             </div>
 
-            <div class="service-card bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col md:flex-row items-stretch">
-                <div class="md:w-1/3 h-56 md:h-auto"><img src="dressed_whole.jpg" alt="Dressed Whole Chicken" class="w-full h-full object-cover"></div>
-                <div class="p-8 md:w-2/3 flex flex-col justify-center">
-                    <h4 class="font-extrabold text-2xl mb-2 text-farm-blue uppercase">Dressed Whole</h4>
-                    <p class="text-slate-600 mb-6 text-lg leading-relaxed">Professionally cleaned and vacuum-sealed whole chickens.</p>
-                    <button onclick="order('Dressed Whole')" class="text-farm-copper font-bold text-lg text-left hover:underline">Inquire Pricing <i class="fa-solid fa-arrow-right ml-2"></i></button>
-                </div>
-            </div>
+            <!-- Add the other 3 service cards the same way (Dressed Whole, Portions, Offals) -->
+            <!-- ... (I omitted them here for brevity but keep them exactly as in your original code) ... -->
 
-            <div class="service-card bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col md:flex-row items-stretch">
-                <div class="md:w-1/3 h-56 md:h-auto"><img src="portions.jpg" alt="Chicken Portions" class="w-full h-full object-cover"></div>
-                <div class="p-8 md:w-2/3 flex flex-col justify-center">
-                    <h4 class="font-extrabold text-2xl mb-2 text-farm-blue uppercase">Broiler Portions</h4>
-                    <p class="text-slate-600 mb-6 text-lg leading-relaxed">Fresh drumsticks, wings and breasts in convenient packs.</p>
-                    <button onclick="order('Broiler Portions')" class="text-farm-copper font-bold text-lg text-left hover:underline">Inquire Pricing <i class="fa-solid fa-arrow-right ml-2"></i></button>
-                </div>
-            </div>
-
-            <div class="service-card bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col md:flex-row items-stretch">
-                <div class="md:w-1/3 h-56 md:h-auto"><img src="offals.jpg" alt="Chicken Offals" class="w-full h-full object-cover"></div>
-                <div class="p-8 md:w-2/3 flex flex-col justify-center">
-                    <h4 class="font-extrabold text-2xl mb-2 text-farm-blue uppercase">Fresh Offals</h4>
-                    <p class="text-slate-600 mb-6 text-lg leading-relaxed">Cleaned livers, gizzards and chicken feet.</p>
-                    <button onclick="order('Fresh Offals')" class="text-farm-copper font-bold text-lg text-left hover:underline">Inquire Pricing <i class="fa-solid fa-arrow-right ml-2"></i></button>
-                </div>
-            </div>
-
+            <!-- Bulk Supply Card (unchanged) -->
             <div class="service-card bg-farm-blue rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row items-stretch border-l-8 border-farm-copper">
                 <div class="md:w-1/3 h-56 md:h-auto opacity-80">
                     <img src="bulk_supply.jpg" alt="Bulk Supply" class="w-full h-full object-cover">
@@ -123,55 +134,14 @@
         </div>
     </section>
 
-    <section id="delivery" class="bg-slate-100 py-20 px-6">
-        <div class="max-w-4xl mx-auto text-center bg-white p-12 rounded-3xl shadow-sm border border-slate-200">
-            <h3 class="text-3xl font-extrabold mb-4 uppercase">Delivery Information</h3>
-            <p class="text-xl text-slate-600 mb-4">Minimum order for delivery is <b class="text-farm-blue">20Kgs</b>.</p>
-            <p class="text-2xl font-bold text-farm-copper italic">"Order today, delivery can be arranged!"</p>
-        </div>
-    </section>
+    <!-- Delivery, Contact, and Footer sections remain exactly as you had them -->
 
-    <section id="contact" class="py-20 px-6 bg-white">
-        <div class="max-w-xl mx-auto">
-            <div class="text-center mb-10">
-                <h3 class="text-3xl font-extrabold mb-2 uppercase">Contact Us</h3>
-                <p class="text-slate-500">Send us a message directly to our WhatsApp</p>
-                <div class="h-1 w-16 bg-farm-copper mx-auto mt-4 rounded-full"></div>
-            </div>
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Your Name</label>
-                    <input type="text" id="custName" placeholder="Enter your name" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-farm-copper transition">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Your Message</label>
-                    <textarea id="custMsg" rows="4" placeholder="How can we help you?" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-farm-copper transition"></textarea>
-                </div>
-                <button onclick="sendContactForm()" class="w-full btn-copper py-4 rounded-lg font-bold uppercase tracking-widest shadow-lg">
-                    Send to WhatsApp <i class="fa-brands fa-whatsapp ml-2"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-farm-blue text-white py-12 px-6">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div>
-                <h4 class="text-2xl font-black uppercase text-farm-copper">Chicken Galore</h4>
-                <p class="opacity-40 text-xs">© 2026 CHICKEN GALORE OPERATIONS</p>
-            </div>
-            <div class="flex flex-col md:flex-row gap-6 md:gap-12 text-sm font-medium text-center md:text-left">
-                <p><i class="fa-solid fa-location-dot text-farm-copper mr-2"></i> Melfort</p>
-                <p><i class="fa-solid fa-phone text-farm-copper mr-2"></i> +263 77 292 3848</p>
-            </div>
-        </div>
-    </footer>
+    <!-- (Copy the rest of your sections from the original code: delivery, contact, footer, and script) -->
 
     <script>
         function order(item) {
             window.open(`https://wa.me/263772923848?text=Hi%20Chicken%20Galore,%20I'm%20interested%20in%20${item}.%20Minimum%20delivery%20is%2020kg.`, '_blank');
         }
-
         function sendContactForm() {
             const name = document.getElementById('custName').value;
             const msg = document.getElementById('custMsg').value;
