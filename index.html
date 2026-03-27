@@ -59,24 +59,51 @@
 </head>
 <body class="bg-slate-50 text-slate-900">
 
-    <!-- Navigation -->
+    <!-- Improved Navigation with Hamburger Menu -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="favicon.png" alt="Chicken Galore" class="w-10 h-10">
-                <h1 class="text-2xl font-extrabold bg-farm-blue text-white px-4 py-1 rounded tracking-tight">
-                    CHICKEN GALORE
-                </h1>
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                
+                <!-- Logo - Clickable + Responsive -->
+                <a href="/" class="flex items-center gap-3 hover:opacity-90 transition">
+                    <img src="favicon.png" alt="Chicken Galore" class="w-10 h-10 flex-shrink-0">
+                    <div class="hidden sm:block">
+                        <h1 class="text-2xl font-extrabold tracking-tight text-farm-blue">CHICKEN GALORE</h1>
+                        <p class="text-[10px] text-slate-500 -mt-1">Premium Broilers</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8 font-medium text-sm uppercase tracking-widest text-slate-600">
+                    <a href="#services" class="hover:text-farm-copper transition">Our Poultry</a>
+                    <a href="#delivery" class="hover:text-farm-copper transition">Delivery</a>
+                    <a href="#contact" class="hover:text-farm-copper transition">Contact</a>
+                </div>
+
+                <!-- Order Button + Hamburger -->
+                <div class="flex items-center gap-4">
+                    <a href="https://wa.me/263772923848" 
+                       class="btn-copper px-5 py-2.5 rounded-full font-bold text-sm shadow-md flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-brands fa-whatsapp"></i> 
+                        ORDER NOW
+                    </a>
+
+                    <!-- Hamburger Button -->
+                    <button id="mobile-menu-button"
+                            class="md:hidden text-2xl text-farm-blue focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
             </div>
-            <div class="hidden md:flex space-x-8 font-bold text-xs uppercase tracking-widest text-slate-600">
-                <a href="#services" class="hover:text-farm-copper transition">Our Poultry</a>
-                <a href="#delivery" class="hover:text-farm-copper transition">Delivery</a>
-                <a href="#contact" class="hover:text-farm-copper transition">Contact</a>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-slate-200">
+                <div class="flex flex-col space-y-4 text-center font-medium text-slate-700">
+                    <a href="#services" class="py-2 hover:text-farm-copper transition">Our Poultry</a>
+                    <a href="#delivery" class="py-2 hover:text-farm-copper transition">Delivery</a>
+                    <a href="#contact" class="py-2 hover:text-farm-copper transition">Contact</a>
+                </div>
             </div>
-            <a href="https://wa.me/263772923848" 
-               class="btn-copper px-6 py-3 rounded-full font-bold text-sm shadow-md flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp"></i> ORDER NOW
-            </a>
         </div>
     </nav>
 
@@ -85,7 +112,7 @@
         <img src="website_banner.jpg" alt="Chicken Galore Banner" class="absolute inset-0 w-full h-full object-cover">
         <div class="absolute inset-0 bg-slate-900/50"></div>
         <div class="relative z-10 text-center px-6 max-w-4xl">
-            <h2 class="text-5xl md:text-7xl font-extrabold mb-4 uppercase tracking-tighter drop-shadow-2xl">Premium Broilers</h2>
+            <h2 class="text-5xl md:text-7xl font-extrabold mb-4 uppercase tracking-tighter drop-shadow-2xl">PREMIUM BROILERS</h2>
             <p class="text-xl md:text-2xl mb-10 opacity-90 font-medium">High-quality commercial poultry from Melfort delivered straight to your door.</p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-5">
                 <a href="#services" class="w-full sm:w-auto px-10 py-4 rounded-full font-bold border-2 border-white text-white hover:bg-white hover:text-farm-blue transition text-center">VIEW SERVICES</a>
@@ -143,11 +170,10 @@
                     <button onclick="order('Bulk Commercial Supply')" class="bulk-button">GET QUOTE</button>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- Delivery Information -->
+    <!-- Delivery -->
     <section id="delivery" class="bg-slate-100 py-20 px-6">
         <div class="max-w-4xl mx-auto text-center bg-white p-12 rounded-3xl shadow-sm border border-slate-200">
             <h3 class="text-3xl font-extrabold mb-4 uppercase">Delivery Information</h3>
@@ -195,9 +221,26 @@
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuButton.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
         function order(item) {
             window.open(`https://wa.me/263772923848?text=Hi%20Chicken%20Galore,%20I'm%20interested%20in%20${item}.%20Minimum%20delivery%20is%2020kg.`, '_blank');
         }
+
         function sendContactForm() {
             const name = document.getElementById('custName').value;
             const msg = document.getElementById('custMsg').value;
